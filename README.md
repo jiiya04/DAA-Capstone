@@ -13,14 +13,6 @@ Given parcels and delivery points, the program builds a **prioritised parcel lis
 | Graph | undirected, weighted adjacency list `{node: {neighbour: distance}}`; `Depot` plus customer nodes `C1..Cn` |
 | Goal | pick parcels maximising total priority within capacity, then visit their destinations by a short route starting/ending at the depot |
 
-### Pipeline
-
-```
-parcels.csv ──> Merge Sort (deadline, priority) ──> 0/1 Knapsack DP ──> selected parcels
-graph.json  ──> Dijkstra (shortest paths) ──────────────────────────┐
-selected destinations ──> Nearest-Neighbour TSP (uses Dijkstra) ──> final route + length
-```
-
 | Step | Algorithm | Why chosen | Complexity |
 |---|---|---|---|
 | Sorting | Merge Sort (own implementation) | stable, guaranteed O(n log n) | O(n log n) time, O(n) space |
@@ -41,17 +33,6 @@ selected destinations ──> Nearest-Neighbour TSP (uses Dijkstra) ──> fina
 | `data/` | sample datasets (small: 12 parcels, large: 1000 parcels) |
 | `screenshots/` | program output traces and `runtime_chart.png` |
 
-## How to run
-
-```bash
-pip install -r requirements.txt      # only needed for the chart
-python data_gen.py                   # (optional) regenerate sample data
-python main.py                       # small dataset
-python main.py --size large --capacity 100
-python benchmark.py                  # runtimes + chart in screenshots/
-```
-
-Requires Python 3.8+.
 
 ## Results (Phases 2-3, small dataset)
 
