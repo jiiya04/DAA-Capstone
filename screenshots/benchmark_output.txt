@@ -1,0 +1,8 @@
+n=10    sort=0.00002s knapsack=0.00012s dijkstra=0.00002s route=0.00006s | value=506 route_len=65
+n=50    sort=0.00009s knapsack=0.00056s dijkstra=0.00002s route=0.00014s | value=1491 route_len=58
+n=100   sort=0.00024s knapsack=0.00100s dijkstra=0.00003s route=0.00042s | value=1956 route_len=184
+n=250   sort=0.00058s knapsack=0.00359s dijkstra=0.00020s route=0.00262s | value=3006 route_len=269
+n=500   sort=0.00237s knapsack=0.00555s dijkstra=0.00015s route=0.00817s | value=3503 route_len=449
+n=1000  sort=0.00329s knapsack=0.01291s dijkstra=0.00060s route=0.02109s | value=5500 route_len=717
+All correctness checks passed.
+Chart saved to screenshots/runtime_chart.png

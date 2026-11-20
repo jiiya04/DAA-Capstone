@@ -1,0 +1,59 @@
+Loaded 1000 parcels, 201 graph nodes, capacity = 100 kg
+
+Parcels sorted by deadline (then priority):
+ID      Weight Priority Deadline  Destination
+P0266        5      100        1  C20
+P0021        1       88        1  C55
+P0075        7       75        1  C156
+P0533        8       73        1  C195
+P0681        4       69        1  C110
+P0658        6       68        1  C38
+P0567        4       67        1  C140
+P0189        2       66        1  C83
+P0348        2       59        1  C185
+P0425       10       59        1  C76
+P0757        2       53        1  C59
+P0026        5       43        1  C105
+P0860        2       39        1  C27
+P0041       11       32        1  C154
+P0323       11       31        1  C121
+... (985 more)
+
+Selected parcels for this trip:
+ID      Weight Priority Deadline  Destination
+P0021        1       88        1  C55
+P0189        2       66        1  C83
+P0668        1       66        3  C136
+P0459        1       64        4  C47
+P0628        2       87        5  C70
+P0909        1       49        5  C109
+P0884        1       48        5  C56
+P0252        2       97        6  C174
+P0738        2       95        6  C1
+P0014        1       85        6  C118
+P0746        2      100        7  C78
+P0182        2       98        7  C84
+P0650        1       52        7  C83
+P0699        3       99        9  C44
+P0645        1       96        9  C140
+... (52 more)
+Total weight = 100 / 100 kg, total priority value = 5018
+
+Shortest paths from the depot (Dijkstra):
+  Depot -> C55: 27  via Depot -> C127 -> C73 -> C58 -> C55
+  Depot -> C83: 24  via Depot -> C96 -> C165 -> C82 -> C3 -> C6 -> C83
+  Depot -> C136: 24  via Depot -> C96 -> C165 -> C52 -> C103 -> C51 -> C136
+  Depot -> C47: 9  via Depot -> C48 -> C173 -> C118 -> C47
+  Depot -> C70: 22  via Depot -> C116 -> C9 -> C15 -> C160 -> C70
+  Depot -> C109: 20  via Depot -> C96 -> C165 -> C52 -> C103 -> C16 -> C109
+  Depot -> C56: 18  via Depot -> C48 -> C65 -> C56
+  Depot -> C174: 17  via Depot -> C48 -> C173 -> C118 -> C68 -> C49 -> C174
+  Depot -> C1: 18  via Depot -> C1
+  Depot -> C118: 7  via Depot -> C48 -> C173 -> C118
+
+Delivery order : Depot -> C127 -> C96 -> C82 -> C3 -> C159 -> C63 -> C83 -> C44 -> C18 -> C37 -> C133 -> C184 -> C193 -> C182 -> C78 -> C8 -> C116 -> C68 -> C118 -> C47 -> C135 -> C98 -> C152 -> C140 -> C70 -> C174 -> C12 -> C134 -> C180 -> C131 -> C109 -> C16 -> C52 -> C169 -> C144 -> C85 -> C84 -> C60 -> C17 -> C1 -> C146 -> C178 -> C27 -> C79 -> C172 -> C56 -> C102 -> C191 -> C167 -> C163 -> C34 -> C150 -> C55 -> C93 -> C136 -> C161 -> Depot
+Full road path : Depot -> C127 -> Depot -> C96 -> C165 -> C82 -> C3 -> C6 -> C159 -> C6 -> C63 -> C6 -> C83 -> C6 -> C21 -> C44 -> C21 -> C18 -> C71 -> C31 -> C37 -> C31 -> C145 -> C133 -> C25 -> C184 -> C193 -> C62 -> C182 -> C185 -> C78 -> C119 -> C8 -> C116 -> C9 -> C49 -> C68 -> C118 -> C47 -> C91 -> C135 -> C98 -> C152 -> C140 -> C107 -> C70 -> C160 -> C15 -> C9 -> C49 -> C174 -> C49 -> C12 -> C59 -> C19 -> C92 -> C134 -> C92 -> C19 -> C180 -> C23 -> C131 -> C109 -> C16 -> C103 -> C52 -> C165 -> C96 -> C154 -> C169 -> C154 -> C96 -> C165 -> C77 -> C144 -> C120 -> C125 -> C31 -> C37 -> C13 -> C85 -> C13 -> C84 -> C13 -> C60 -> C17 -> C1 -> C36 -> C146 -> C36 -> C1 -> C17 -> C151 -> C178 -> C151 -> C157 -> C27 -> C80 -> C79 -> C84 -> C13 -> C85 -> C172 -> C85 -> C65 -> C56 -> C102 -> C56 -> C194 -> C191 -> C179 -> C167 -> C113 -> C163 -> C113 -> C61 -> C34 -> C150 -> C34 -> C55 -> C7 -> C6 -> C93 -> C30 -> C52 -> C103 -> C51 -> C136 -> C51 -> C181 -> C176 -> C161 -> C176 -> C173 -> C48 -> Depot
+Total route length = 675
+
+Runtime summary (seconds):
+  sort=0.004369  knapsack=0.017160  dijkstra(1 run)=0.000975  route=0.034824

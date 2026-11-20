@@ -1,0 +1,59 @@
+Loaded 12 parcels, 7 graph nodes, capacity = 50 kg
+
+Parcels sorted by deadline (then priority):
+ID      Weight Priority Deadline  Destination
+P0003        6       75        4  C5
+P0006        9       55        4  C5
+P0004        4        5        6  C4
+P0011        3       70        8  C5
+P0009        7        7       15  C1
+P0005        7        9       16  C1
+P0010        9       18       19  C4
+P0001        6       20       26  C6
+P0002        1       10       35  C1
+P0008       10        8       37  C5
+P0007        2       29       41  C6
+P0012        5       72       44  C2
+
+DP table (rows = parcels considered, cols = capacity 0..14)
+           0    1    2    3    4    5    6    7    8    9   10   11   12   13   14
+   none    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+  P0003    0    0    0    0    0    0   75   75   75   75   75   75   75   75   75
+  P0006    0    0    0    0    0    0   75   75   75   75   75   75   75   75   75
+  P0004    0    0    0    0    5    5   75   75   75   75   80   80   80   80   80
+  P0011    0    0    0   70   70   70   75   75   75  145  145  145  145  150  150
+  P0009    0    0    0   70   70   70   75   75   75  145  145  145  145  150  150
+  P0005    0    0    0   70   70   70   75   75   75  145  145  145  145  150  150
+  P0010    0    0    0   70   70   70   75   75   75  145  145  145  145  150  150
+  P0001    0    0    0   70   70   70   75   75   75  145  145  145  145  150  150
+  P0002    0   10   10   70   80   80   80   85   85  145  155  155  155  155  160
+  P0008    0   10   10   70   80   80   80   85   85  145  155  155  155  155  160
+  P0007    0   10   29   70   80   99  109  109  109  145  155  174  184  184  184
+  P0012    0   10   29   70   80   99  109  109  142  152  171  181  184  184  217
+
+Selected parcels for this trip:
+ID      Weight Priority Deadline  Destination
+P0003        6       75        4  C5
+P0006        9       55        4  C5
+P0011        3       70        8  C5
+P0005        7        9       16  C1
+P0010        9       18       19  C4
+P0001        6       20       26  C6
+P0002        1       10       35  C1
+P0007        2       29       41  C6
+P0012        5       72       44  C2
+Total weight = 48 / 50 kg, total priority value = 358
+
+Shortest paths from the depot (Dijkstra):
+  Depot -> C5: 21  via Depot -> C4 -> C5
+  Depot -> C1: 5  via Depot -> C1
+  Depot -> C4: 19  via Depot -> C4
+  Depot -> C6: 14  via Depot -> C6
+  Depot -> C2: 7  via Depot -> C1 -> C2
+
+Delivery order : Depot -> C1 -> C2 -> C6 -> C4 -> C5 -> Depot
+Full road path : Depot -> C1 -> C2 -> C1 -> Depot -> C6 -> C4 -> C5 -> C4 -> Depot
+Total route length = 58
+
+Runtime summary (seconds):
+  sort=0.000044  knapsack=0.000096  dijkstra(1 run)=0.000018  route=0.000061
